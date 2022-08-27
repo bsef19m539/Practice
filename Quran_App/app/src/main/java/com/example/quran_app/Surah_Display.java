@@ -22,8 +22,8 @@ public class Surah_Display extends AppCompatActivity {
         DatabaseAccess databaseAccess=DatabaseAccess.getInstance(getApplicationContext());
         databaseAccess.open();
         ayahs=findViewById(R.id.ayahs);
-        ArrayAdapter<String> arrayadapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,databaseAccess.getSurahAyahs(Surah_no));
-        ayahs.setAdapter(arrayadapter);
+        List_Adapter_Ayahs listadapter=new List_Adapter_Ayahs(this,databaseAccess.getSurahAyahs(Surah_no));
+        ayahs.setAdapter(listadapter);
 
 
     }

@@ -1,6 +1,7 @@
 package com.example.quran_app;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -573,7 +574,18 @@ public class QDH {
             list.add(urduSurahNames[i]);
         return list;
     }
+    public ArrayList<String> GetParahNames() {
+        ArrayList<String> list = new ArrayList<String>();
+        list.addAll(Arrays.asList(ParahName));
+        return list;
+    }
 
+    public ArrayList<String> GetSurahNamesPlusIndex() {
+        ArrayList<String> list = new ArrayList<String>();
+        for (int i = 0; i < urduSurahNames.length; ++i)
+            list.add(i+") "+urduSurahNames[i]);
+        return list;
+    }
     public int getSurahStart(int surahNumber) {
         return SSP[surahNumber];
     }

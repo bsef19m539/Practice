@@ -48,11 +48,15 @@ public class DatabaseAccess {
     }
     public ArrayList getSurahAyahs(int Surah_no)
     {
-        c=db.rawQuery("Select ArabicText from tayah where SuraID = "+Surah_no+"",new String[]{});
-        ArrayList<String> SurahAyahs=new ArrayList<>();
+        c=db.rawQuery("Select ArabicText,FatehMuhammadJalandhri,DrMohsinKhan from tayah where SuraID = "+Surah_no+"",new String[]{});
+        ArrayList<Ayah> SurahAyahs=new ArrayList<>();
+        Ayah ayahs;
         while(c.moveToNext()){
             String ayah=c.getString(0);
-            SurahAyahs.add(ayah);
+            String urduTranslatiom=c.getString(1);
+            String englishTranslation=c.getString(2);
+            ayahs=new Ayah(ayah,urduTranslatiom,englishTranslation);
+            SurahAyahs.add(ayahs);
         }
         return SurahAyahs;
     }

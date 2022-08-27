@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 TextView txt;
 Button surah_names;
+Button parah_names;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,16 +22,21 @@ Button surah_names;
         String translation=databaseAccess.getTranslation(1);
         txt.setText(translation);*/
         surah_names=findViewById(R.id.surah_names);
+        parah_names=findViewById(R.id.parah_names);
         surah_names.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this, Surah_List.class);
-                // intent.putExtra("name",alphabets[position]);
-                //intent.putExtra("image",imgs[position]);
                 startActivity(intent);
             }
         });
 
-
+        parah_names.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, Parah_List.class);
+                startActivity(intent);
+            }
+        });
     }
 }

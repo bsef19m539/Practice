@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Quran_App">
-        <activity android:name=".Surah_Display"></activity>
+        <activity android:name=".Parah_Display"></activity>
+        <activity android:name=".Parah_List" />
+        <activity android:name=".Surah_Display" />
         <activity android:name=".Surah_List" />
         <activity android:name=".MainActivity">
             <intent-filter>
